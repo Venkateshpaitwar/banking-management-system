@@ -27,7 +27,18 @@ public class Main {
         Account savings = new SavingsAccount(1234567890, 1000000.00, c1);
         Account current = new CurrentAccount(1987654321, 5744972.23, c2);
 
+        bank.addAccount(savings);
+        bank.addAccount(current);
+
         savings.calculateInterest();
         current.calculateInterest();
+
+        Account foundAccount = bank.findAccountByNumber(1234567890L);
+
+        if (foundAccount != null) {
+            System.out.println("Account found:");
+            System.out.println("Account Number: " + foundAccount.getAccount_no());
+            System.out.println("Balance: " + foundAccount.getBalance());
+        }
     }
 }
