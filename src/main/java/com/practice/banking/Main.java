@@ -33,8 +33,8 @@ public class Main {
             System.out.println("Customer not found.");
         }
 
-        Account savings = new SavingsAccount(1234567890, 1000000.00, c1);
-        Account current = new CurrentAccount(1987654321, 5744972.23, c2);
+        Account savings = new SavingsAccount(1234567890, 1000000.00, c1, AccountType.SAVINGS);
+        Account current = new CurrentAccount(1987654321, 5744972.23, c2, AccountType.CURRENT );
 
         bank.addAccount(savings);
         bank.addAccount(current);
@@ -49,6 +49,9 @@ public class Main {
             System.out.println("Account Number: " + foundAccount.getAccount_no());
             System.out.println("Balance: " + foundAccount.getBalance());
         }
+
+        System.out.println(savings.getAccountType());
+        System.out.println(current.getAccountType());
 
     }
 }

@@ -2,8 +2,8 @@ package com.practice.banking;
 
 public class CurrentAccount extends Account{
 
-    public CurrentAccount(long account_no, double balance, Customer customer) {
-        super(account_no, balance, customer);
+    public CurrentAccount(long account_no, double balance, Customer customer, AccountType accountType) {
+        super(account_no, balance, customer, accountType);
     }
 
     @Override

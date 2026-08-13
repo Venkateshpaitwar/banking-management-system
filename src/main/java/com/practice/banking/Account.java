@@ -5,11 +5,13 @@ public abstract class Account implements AccountOperations{
     private long account_no;
     protected double balance;
     private Customer customer;
+    private AccountType accountType;
 
-    public Account(long account_no, double balance, Customer customer) {
+    public Account(long account_no, double balance, Customer customer, AccountType accountType) {
         this.account_no = account_no;
         this.balance = balance;
         this.customer = customer;
+        this.accountType = accountType;
     }
 
     public void deposit(double amount) {
@@ -37,5 +39,10 @@ public abstract class Account implements AccountOperations{
     public Customer getCustomer() {
         return customer;
     }
+
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
 
 }
