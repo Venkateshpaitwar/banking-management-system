@@ -1,4 +1,6 @@
 package com.practice.banking;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -6,7 +8,14 @@ public class Main {
 
         Customer c1 = new Customer(1, "Venkatesh", "vp@gmail.com");
         Customer c2 = new Customer(2, "Srushti", "sa@gmail.com");
+        Customer c3 = new Customer(1, "Venkatesh", "vp@gmail.com");
 
+        Set<Customer> customers = new HashSet<>();
+        customers.add(c1);
+        customers.add(c2);
+        customers.add(c3);
+
+        System.out.println("Size: " + customers.size());
         Bank bank = new Bank();
 
         bank.addCustomer(c1);
@@ -40,5 +49,6 @@ public class Main {
             System.out.println("Account Number: " + foundAccount.getAccount_no());
             System.out.println("Balance: " + foundAccount.getBalance());
         }
+
     }
 }
