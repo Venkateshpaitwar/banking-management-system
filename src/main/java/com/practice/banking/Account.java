@@ -1,6 +1,6 @@
 package com.practice.banking;
 
-public abstract class Account {
+public abstract class Account implements AccountOperations{
 
     private long account_no;
     protected double balance;
