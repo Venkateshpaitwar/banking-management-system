@@ -20,10 +20,14 @@ public abstract class Account implements AccountOperations{
         }
     }
 
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
+    public void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount <= 0) {
+            throw new InsufficientBalanceException("Amount must be positive");
         }
+        if (amount > balance) {
+            throw new InsufficientBalanceException("Insufficient balance");
+        }
+        balance -= amount;
     }
 
     public abstract void calculateInterest();

@@ -35,7 +35,7 @@ public class Main {
 
         Account savings = new SavingsAccount(1234567890, 1000000.00, c1, AccountType.SAVINGS);
         Account current = new CurrentAccount(1987654321, 5744972.23, c2, AccountType.CURRENT );
-
+        Account savings2 = new SavingsAccount(1234543211, 40541049.99, c3, AccountType.SAVINGS);
         bank.addAccount(savings);
         bank.addAccount(current);
 
@@ -52,6 +52,12 @@ public class Main {
 
         System.out.println(savings.getAccountType());
         System.out.println(current.getAccountType());
+
+        try{
+            savings.withdraw(2043789032870.00);
+        }catch(InsufficientBalanceException e){
+            System.out.println(e.getMessage());
+        }
 
     }
 }
